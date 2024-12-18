@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "studio.dreamys.prometheus.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"com.lunarclient.websocket.cosmetic.v1.MixinCosmeticService$Stub"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
