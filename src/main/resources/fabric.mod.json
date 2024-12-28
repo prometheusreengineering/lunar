@@ -1,9 +1,10 @@
 {
 	"schemaVersion": 1,
-	"id": "prometheus-lunar",
-	"environment": "client",
+	"id": "prometheus",
 	"version": "${project.version}",
+	"environment": "client",
 	"name": "Prometheus",
+	"description": "The prometheus' patch for Lunar Client.",
 	"authors": [
 		"dxxxxy"
 	],
@@ -14,6 +15,6 @@
 	],
 	"depends": {
 		"minecraft": ">=1.16.5",
-		"java": ">=21"
+		"java": ">=8"
 	}
 }
