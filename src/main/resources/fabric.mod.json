@@ -6,7 +6,8 @@
 	"name": "Prometheus",
 	"description": "The prometheus' patch for Lunar Client.",
 	"authors": [
-		"dxxxxy"
+		"dxxxxy",
+		"Cootshk"
 	],
 	"license": "GPL-3.0",
 	"icon": "assets/prometheus/icon.png",
@@ -16,5 +17,6 @@
 	"depends": {
 		"minecraft": ">=1.16.5",
 		"java": ">=8"
-	}
+	},
+	"accessWidener": "prometheus.accesswidener"
 }
