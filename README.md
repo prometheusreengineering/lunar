@@ -19,13 +19,6 @@ The prometheus' patch for Lunar Client.
 - Staff modules.
 - Restricted modules.
 
-## Building
-Grab the `lunar.jar` file from Lunar Client's install folder (`~/.lunarclient/offline/multiver/lunar.jar` on Linux) and place it in `libs/lunar.mock.jar`.
-Then, compile and package with Maven:
-```bash
-mvn clean compile package
-```
-
 ## Disclaimer
 This project is intended for educational purposes only. We are not responsible for any damage caused by this project.
 
