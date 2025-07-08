@@ -1,11 +1,9 @@
 package studio.dreamys.prometheus.mixin.com.lunarclient.websocket.cosmetic.v2;
 
-//import com.lunarclient.websocket.cosmetic.v2.*;
 import com.lunarclient.websocket.cosmetic.v2.LoginResponse;
 import com.lunarclient.websocket.cosmetic.v2.CosmeticService;
 import com.lunarclient.websocket.cosmetic.v2.EquippedCosmetic;
 import com.lunarclient.websocket.cosmetic.v2.Outfit;
-//import com.lunarclient.websocket.cosmetic.v2.CustomizableCosmeticSettings;
 import com.lunarclient.websocket.cosmetic.v2.LoginRequest;
 import com.lunarclient.websocket.cosmetic.v2.UpdateOutfitRequest;
 
