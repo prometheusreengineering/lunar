@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import studio.dreamys.prometheus.util.FileUtils;
+import studio.dreamys.prometheus.util.v1.FileUtils;
 import studio.dreamys.prometheus.util.ReflectionUtils;
 
 import java.util.List;

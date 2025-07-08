@@ -3,7 +3,8 @@
 	"package": "studio.dreamys.prometheus.mixin",
 	"compatibilityLevel": "JAVA_8",
 	"mixins": [
-		"com.lunarclient.websocket.cosmetic.v1.MixinCosmeticService$Stub"
+		"com.lunarclient.websocket.cosmetic.v1.MixinCosmeticService$Stub",
+		"com.lunarclient.websocket.cosmetic.v2.MixinCosmeticService$Stub"
 	],
 	"injectors": {
 		"defaultRequire": 1

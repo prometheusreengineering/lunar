@@ -1,4 +1,4 @@
-package studio.dreamys.prometheus.util;
+package studio.dreamys.prometheus.util.v1;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
