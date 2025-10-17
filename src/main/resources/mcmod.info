@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "prometheus",
+    "name": "Prometheus",
+    "description": "The prometheus' patch for Lunar Client.",
+    "version": "${project.version}",
+    "authorList": [
+      "dxxxxy",
+      "Cootshk"
+    ],
+    "logoFile": "assets/prometheus/icon.png"
+  }
+]
