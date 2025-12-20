@@ -7,6 +7,7 @@
     <groupId>studio.dreamys</groupId>
     <artifactId>prometheus</artifactId>
     <version>1.1.0-lunar</version>
+    <description>The prometheus' patch for Lunar Client.</description>
 
     <repositories>
         <repository>
@@ -59,7 +60,7 @@
         <dependency>
             <groupId>com.moonsworth</groupId>
             <artifactId>lunar</artifactId>
-            <version>2.20.0-2525</version>
+            <version>2.21.19-2551</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/lunar.mock.jar</systemPath>
         </dependency>
@@ -80,9 +81,7 @@
                 <configuration>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
-                        <manifest>
-                            <addClasspath>false</addClasspath>
-                        </manifest>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
                     </archive>
                 </configuration>
             </plugin>

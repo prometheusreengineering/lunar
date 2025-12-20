@@ -1,0 +1,13 @@
+[
+    {
+        "modid": "prometheus",
+        "name": "Prometheus",
+        "description": "${project.description}",
+        "version": "${project.version}",
+        "authorList": [
+            "dxxxxy",
+            "Cootshk"
+        ],
+        "logoFile": "assets/prometheus/icon.png"
+    }
+]
