@@ -4,6 +4,7 @@ import com.lunarclient.websocket.cosmetic.v2.Outfit;
 import com.lunarclient.websocket.emote.v1.EquippedEmote;
 import com.lunarclient.websocket.spray.v1.EquippedSpray;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
@@ -23,12 +24,19 @@ public class FileUtils {
     private static Path emotesPath = basePath.resolve("emotes.bin");
     private static Path spraysPath = basePath.resolve("sprays.bin");
 
+    static {
+        try {
+            Files.createDirectories(basePath);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "Failed to create base directory: " + basePath, e);
+        }
+    }
+
     public static void writeBadge(int badgeId) {
         try (OutputStream os = Files.newOutputStream(badgePath)) {
             os.write(badgeId);
         } catch (Throwable e) {
-            logger.log(Level.SEVERE, "Failed to serialize badge to file.");
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to serialize badge to file.", e);
         }
     }
 
@@ -38,8 +46,7 @@ public class FileUtils {
         try (InputStream is = Files.newInputStream(badgePath)) {
             badgeId = is.read();
         } catch (Throwable e) {
-            logger.log(Level.WARNING, "Failed to deserialize badge from file.");
-            e.printStackTrace();
+            logger.log(Level.WARNING, "Failed to deserialize badge from file.", e);
         }
 
         return badgeId;
@@ -49,8 +56,7 @@ public class FileUtils {
         try (OutputStream os = Files.newOutputStream(outfitPath)) {
             outfit.writeTo(os);
         } catch (Throwable e) {
-            logger.log(Level.SEVERE, "Failed to serialize outfit to file.");
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to serialize outfit to file.", e);
         }
     }
 
@@ -64,8 +70,7 @@ public class FileUtils {
             Outfit outfit = Outfit.parseFrom(is);
             builder.mergeFrom(outfit);
         } catch (Throwable e) {
-            logger.log(Level.WARNING, "Failed to deserialize outfit from file.");
-            e.printStackTrace();
+            logger.log(Level.WARNING, "Failed to deserialize outfit from file.", e);
         }
 
         return builder.build();
@@ -77,8 +82,7 @@ public class FileUtils {
                 emote.writeDelimitedTo(os);
             }
         } catch (Throwable e) {
-            logger.log(Level.SEVERE, "Failed to serialize equipped emote list to file.");
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to serialize equipped emote list to file.", e);
         }
     }
 
@@ -93,8 +97,7 @@ public class FileUtils {
                 }
             }
         } catch (Throwable e) {
-            logger.log(Level.WARNING, "Failed to deserialize equipped emote list from file.");
-            e.printStackTrace();
+            logger.log(Level.WARNING, "Failed to deserialize equipped emote list from file.", e);
         }
 
         return equippedEmotes;
@@ -106,8 +109,7 @@ public class FileUtils {
                 spray.writeDelimitedTo(os);
             }
         } catch (Throwable e) {
-            logger.log(Level.SEVERE, "Failed to serialize equipped spray list to file.");
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Failed to serialize equipped spray list to file.", e);
         }
     }
 
@@ -122,8 +124,7 @@ public class FileUtils {
                 }
             }
         } catch (Throwable e) {
-            logger.log(Level.WARNING, "Failed to deserialize equipped spray list from file.");
-            e.printStackTrace();
+            logger.log(Level.WARNING, "Failed to deserialize equipped spray list from file.", e);
         }
 
         return equippedSprays;
