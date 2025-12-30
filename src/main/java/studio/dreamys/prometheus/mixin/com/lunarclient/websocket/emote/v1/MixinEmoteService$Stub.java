@@ -15,12 +15,15 @@ import org.spongepowered.asm.mixin.Overwrite;
 import studio.dreamys.prometheus.util.FileUtils;
 
 import java.util.List;
+import java.util.logging.Level;
+
+import static studio.dreamys.prometheus.util.FileUtils.logger;
 
 @Mixin(value = EmoteService.Stub.class, remap = false)
 public class MixinEmoteService$Stub {
     @Overwrite
     public void login(RpcController rpcController, LoginRequest loginRequest, RpcCallback<LoginResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched emote service login request.");
+        logger.log(Level.INFO, "Patched emote service login request.");
 
         //load saved equipped emotes from file
         List<EquippedEmote> equippedEmotes = FileUtils.readEquippedEmotes();
@@ -37,7 +40,7 @@ public class MixinEmoteService$Stub {
 
     @Overwrite
     public void useEmote(RpcController rpcController, UseEmoteRequest useEmoteRequest, RpcCallback<UseEmoteResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched emote service use emote request.");
+        logger.log(Level.INFO, "Patched emote service use emote request.");
 
         //create our own response
         UseEmoteResponse response = UseEmoteResponse.newBuilder()
@@ -50,7 +53,7 @@ public class MixinEmoteService$Stub {
 
     @Overwrite
     public void updateEquippedEmotes(RpcController rpcController, UpdateEquippedEmotesRequest updateEquippedEmotesRequest, RpcCallback<UpdateEquippedEmotesResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched emote service update equipped emotes request.");
+        logger.log(Level.INFO, "Patched emote service update equipped emotes request.");
 
         //save equipped emotes to file
         FileUtils.writeEquippedEmotes(updateEquippedEmotesRequest.getEquippedEmotesList());

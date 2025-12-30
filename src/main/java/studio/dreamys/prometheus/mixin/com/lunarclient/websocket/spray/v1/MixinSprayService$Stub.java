@@ -15,12 +15,15 @@ import org.spongepowered.asm.mixin.Overwrite;
 import studio.dreamys.prometheus.util.FileUtils;
 
 import java.util.List;
+import java.util.logging.Level;
+
+import static studio.dreamys.prometheus.util.FileUtils.logger;
 
 @Mixin(value = SprayService.Stub.class, remap = false)
 public class MixinSprayService$Stub {
     @Overwrite
     public void login(RpcController rpcController, LoginRequest loginRequest, RpcCallback<LoginResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched spray service login request.");
+        logger.log(Level.INFO, "Patched spray service login request.");
 
         //load saved equipped sprays from file
         List<EquippedSpray> equippedSprays = FileUtils.readEquippedSprays();
@@ -37,7 +40,7 @@ public class MixinSprayService$Stub {
 
     @Overwrite
     public void useSpray(RpcController rpcController, UseSprayRequest useSprayRequest, RpcCallback<UseSprayResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched spray service use spray request.");
+        logger.log(Level.INFO, "Patched spray service use spray request.");
 
         //create our own response
         UseSprayResponse response = UseSprayResponse.newBuilder()
@@ -50,7 +53,7 @@ public class MixinSprayService$Stub {
 
     @Overwrite
     public void updateEquippedSprays(RpcController rpcController, UpdateEquippedSpraysRequest updateEquippedSpraysRequest, RpcCallback<UpdateEquippedSpraysResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched spray service update equipped sprays request.");
+        logger.log(Level.INFO, "Patched spray service update equipped sprays request.");
 
         //save equipped sprays to file
         FileUtils.writeEquippedSprays(updateEquippedSpraysRequest.getEquippedSpraysList());

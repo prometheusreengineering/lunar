@@ -11,18 +11,23 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FileUtils {
-    private static Path badgePath = Paths.get("lunar.badge.prometheus");
-    private static Path outfitPath = Paths.get("lunar.outfit.prometheus");
-    private static Path emotesPath = Paths.get("lunar.emotes.prometheus");
-    private static Path spraysPath = Paths.get("lunar.sprays.prometheus");
+    public static final Logger logger = Logger.getLogger("Prometheus");
+
+    private static Path basePath = Paths.get("prometheus", "saved");
+    private static Path badgePath = basePath.resolve("badge.bin");
+    private static Path outfitPath = basePath.resolve("outfit.bin");
+    private static Path emotesPath = basePath.resolve("emotes.bin");
+    private static Path spraysPath = basePath.resolve("sprays.bin");
 
     public static void writeBadge(int badgeId) {
         try (OutputStream os = Files.newOutputStream(badgePath)) {
             os.write(badgeId);
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to serialize badge to file.");
+            logger.log(Level.SEVERE, "Failed to serialize badge to file.");
             e.printStackTrace();
         }
     }
@@ -33,7 +38,7 @@ public class FileUtils {
         try (InputStream is = Files.newInputStream(badgePath)) {
             badgeId = is.read();
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to deserialize badge from file.");
+            logger.log(Level.WARNING, "Failed to deserialize badge from file.");
             e.printStackTrace();
         }
 
@@ -44,7 +49,7 @@ public class FileUtils {
         try (OutputStream os = Files.newOutputStream(outfitPath)) {
             outfit.writeTo(os);
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to serialize outfit to file.");
+            logger.log(Level.SEVERE, "Failed to serialize outfit to file.");
             e.printStackTrace();
         }
     }
@@ -59,7 +64,7 @@ public class FileUtils {
             Outfit outfit = Outfit.parseFrom(is);
             builder.mergeFrom(outfit);
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to deserialize outfit from file.");
+            logger.log(Level.WARNING, "Failed to deserialize outfit from file.");
             e.printStackTrace();
         }
 
@@ -72,7 +77,7 @@ public class FileUtils {
                 emote.writeDelimitedTo(os);
             }
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to serialize equipped emote list to file.");
+            logger.log(Level.SEVERE, "Failed to serialize equipped emote list to file.");
             e.printStackTrace();
         }
     }
@@ -88,7 +93,7 @@ public class FileUtils {
                 }
             }
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to deserialize equipped emote list from file.");
+            logger.log(Level.WARNING, "Failed to deserialize equipped emote list from file.");
             e.printStackTrace();
         }
 
@@ -101,7 +106,7 @@ public class FileUtils {
                 spray.writeDelimitedTo(os);
             }
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to serialize equipped spray list to file.");
+            logger.log(Level.SEVERE, "Failed to serialize equipped spray list to file.");
             e.printStackTrace();
         }
     }
@@ -117,7 +122,7 @@ public class FileUtils {
                 }
             }
         } catch (Throwable e) {
-            System.out.println("[Prometheus] Failed to deserialize equipped spray list from file.");
+            logger.log(Level.WARNING, "Failed to deserialize equipped spray list from file.");
             e.printStackTrace();
         }
 

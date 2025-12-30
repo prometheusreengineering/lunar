@@ -12,11 +12,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import studio.dreamys.prometheus.util.FileUtils;
 
+import java.util.logging.Level;
+
+import static studio.dreamys.prometheus.util.FileUtils.logger;
+
 @Mixin(value = CosmeticService.Stub.class, remap = false)
 public class MixinCosmeticService$Stub {
     @Overwrite
     public void login(RpcController rpcController, LoginRequest loginRequest, RpcCallback<LoginResponse> rpcCallback) {
-        System.out.println("[Prometheus] Patched cosmetic service login request.");
+        logger.log(Level.INFO, "Patched cosmetic service login request.");
 
         //load saved outfit from file
         Outfit outfit = FileUtils.readOutfit();
@@ -35,7 +39,7 @@ public class MixinCosmeticService$Stub {
 
     @Overwrite
     public void updateOutfit(RpcController rpcController, UpdateOutfitRequest updateOutfitRequest, RpcCallback<UpdateOutfitRequest> rpcCallback) {
-        System.out.println("[Prometheus] Patched cosmetic service update outfit request.");
+        logger.log(Level.INFO, "Patched cosmetic service update outfit request.");
 
         //save outfit to file
         FileUtils.writeOutfit(updateOutfitRequest.getOutfit());
