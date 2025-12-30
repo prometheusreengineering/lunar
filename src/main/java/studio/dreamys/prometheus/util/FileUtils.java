@@ -12,6 +12,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,7 +27,15 @@ public class FileUtils {
     private static Path spraysPath = basePath.resolve("sprays.bin");
 
     static {
+        //overwrite lunar's logger settings
+        Handler handlerObj = new ConsoleHandler();
+        handlerObj.setLevel(Level.ALL);
+        logger.addHandler(handlerObj);
+        logger.setLevel(Level.ALL);
+        logger.setUseParentHandlers(false);
+
         try {
+            //create directories
             Files.createDirectories(basePath);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Failed to create base directory: " + basePath, e);
