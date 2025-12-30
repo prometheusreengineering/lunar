@@ -6,18 +6,12 @@ The prometheus' patch for Lunar Client.
 [![Discord](https://img.shields.io/discord/1197794960985043034?style=for-the-badge&label=Discord&color=rgb(88%2C%20101%2C%20242)%20)](https://discord.gg/BFDWmPfmXg)
 
 ## Features
-- Unlocks ALL cosmetics.
+- Unlocks ALL cosmetics, emotes, sprays and badges.
 - Lightweight and non-invasive.
 - Compatible with all Fabric versions of Lunar Client.
 
-### Known Issues
-- Cloth cloaks do not work.
-- Cosmetic metadata is not saved.
-
 ### Future Plans
-- Emotes.
-- Staff modules.
-- Restricted modules.
+- Restricted (ex: staff) modules.
 
 ## Disclaimer
 This project is intended for educational purposes only. We are not responsible for any damage caused by this project.
