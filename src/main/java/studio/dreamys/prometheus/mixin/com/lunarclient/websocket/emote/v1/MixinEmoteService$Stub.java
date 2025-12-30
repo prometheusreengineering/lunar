@@ -2,7 +2,14 @@ package studio.dreamys.prometheus.mixin.com.lunarclient.websocket.emote.v1;
 
 import com.google.protobuf.RpcCallback;
 import com.google.protobuf.RpcController;
-import com.lunarclient.websocket.emote.v1.*;
+import com.lunarclient.websocket.emote.v1.EmoteService;
+import com.lunarclient.websocket.emote.v1.EquippedEmote;
+import com.lunarclient.websocket.emote.v1.LoginRequest;
+import com.lunarclient.websocket.emote.v1.LoginResponse;
+import com.lunarclient.websocket.emote.v1.UpdateEquippedEmotesRequest;
+import com.lunarclient.websocket.emote.v1.UpdateEquippedEmotesResponse;
+import com.lunarclient.websocket.emote.v1.UseEmoteRequest;
+import com.lunarclient.websocket.emote.v1.UseEmoteResponse;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import studio.dreamys.prometheus.util.FileUtils;

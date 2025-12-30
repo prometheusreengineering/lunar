@@ -2,7 +2,11 @@ package studio.dreamys.prometheus.mixin.com.lunarclient.websocket.badge.v1;
 
 import com.google.protobuf.RpcCallback;
 import com.google.protobuf.RpcController;
-import com.lunarclient.websocket.badge.v1.*;
+import com.lunarclient.websocket.badge.v1.BadgeService;
+import com.lunarclient.websocket.badge.v1.EquipBadgeRequest;
+import com.lunarclient.websocket.badge.v1.EquipBadgeResponse;
+import com.lunarclient.websocket.badge.v1.LoginRequest;
+import com.lunarclient.websocket.badge.v1.LoginResponse;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import studio.dreamys.prometheus.util.FileUtils;
