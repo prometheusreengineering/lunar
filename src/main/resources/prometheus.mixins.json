@@ -4,7 +4,8 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "com.lunarclient.websocket.cosmetic.v2.MixinCosmeticService$Stub",
-        "com.lunarclient.websocket.emote.v1.MixinEmoteService$Stub"
+        "com.lunarclient.websocket.emote.v1.MixinEmoteService$Stub",
+        "com.lunarclient.websocket.spray.v1.MixinSprayService$Stub"
     ],
     "injectors": {
         "defaultRequire": 1
