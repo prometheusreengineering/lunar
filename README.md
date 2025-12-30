@@ -11,6 +11,7 @@ The prometheus' patch for Lunar Client.
 - Compatible with all Fabric versions of Lunar Client.
 
 ### Future Plans
+- Cosmetics, emotes, sprays and badges dump.
 - Restricted (ex: staff) modules.
 
 ## Disclaimer
