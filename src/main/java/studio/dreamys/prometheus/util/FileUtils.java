@@ -13,9 +13,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtils {
+    private static Path badgePath = Paths.get("lunar.badge.prometheus");
     private static Path outfitPath = Paths.get("lunar.outfit.prometheus");
     private static Path emotesPath = Paths.get("lunar.emotes.prometheus");
     private static Path spraysPath = Paths.get("lunar.sprays.prometheus");
+
+    public static void writeBadge(int badgeId) {
+        try (OutputStream os = Files.newOutputStream(badgePath)) {
+            os.write(badgeId);
+        } catch (Throwable e) {
+            System.out.println("[Prometheus] Failed to serialize badge to file.");
+            e.printStackTrace();
+        }
+    }
+
+    public static int readBadge() {
+        int badgeId = 0;
+
+        try (InputStream is = Files.newInputStream(badgePath)) {
+            badgeId = is.read();
+        } catch (Throwable e) {
+            System.out.println("[Prometheus] Failed to deserialize badge from file.");
+            e.printStackTrace();
+        }
+
+        return badgeId;
+    }
 
     public static void writeOutfit(Outfit outfit) {
         try (OutputStream os = Files.newOutputStream(outfitPath)) {

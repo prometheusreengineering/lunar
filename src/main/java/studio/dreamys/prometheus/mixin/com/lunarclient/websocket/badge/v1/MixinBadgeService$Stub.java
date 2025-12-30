@@ -1,0 +1,36 @@
+package studio.dreamys.prometheus.mixin.com.lunarclient.websocket.badge.v1;
+
+import com.google.protobuf.RpcCallback;
+import com.google.protobuf.RpcController;
+import com.lunarclient.websocket.badge.v1.*;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import studio.dreamys.prometheus.util.FileUtils;
+
+@Mixin(value = BadgeService.Stub.class, remap = false)
+public class MixinBadgeService$Stub {
+    @Overwrite
+    public void login(RpcController rpcController, LoginRequest loginRequest, RpcCallback<LoginResponse> rpcCallback) {
+        System.out.println("[Prometheus] Patched badge service login request.");
+
+        //load equipped badge from file
+        int badgeId = FileUtils.readBadge();
+
+        //create our own response
+        LoginResponse response = LoginResponse.newBuilder()
+                .setHasAllBadgesFlag(true)
+                .setEquippedBadgeId(badgeId)
+                .build();
+
+        //let lunar handle the rest
+        rpcCallback.run(response);
+    }
+
+    @Overwrite
+    public void equipBadge(RpcController rpcController, EquipBadgeRequest equipBadgeRequest, RpcCallback<EquipBadgeResponse> rpcCallback) {
+        System.out.println("[Prometheus] Patched badge service equip badge request.");
+
+        //save equipped badge to file
+        FileUtils.writeBadge(equipBadgeRequest.getBadgeId());
+    }
+}
