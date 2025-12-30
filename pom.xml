@@ -85,14 +85,6 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>net.fabricmc</groupId>
-                <artifactId>access-widener</artifactId>
-                <version>2.1.0</version>
-                <configuration>
-                    <accessWidenerPath>src/main/resources/prometheus.accesswidener</accessWidenerPath>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 

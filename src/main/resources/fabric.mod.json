@@ -17,6 +17,5 @@
 	"depends": {
 		"minecraft": ">=1.16.5",
 		"java": ">=8"
-	},
-	"accessWidener": "prometheus.accesswidener"
+	}
 }
