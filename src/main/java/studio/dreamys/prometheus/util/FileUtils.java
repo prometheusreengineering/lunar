@@ -30,7 +30,7 @@ public class FileUtils {
                 .setName("Prometheus")
                 .setFavorite(true);
 
-        try (InputStream is = Files.newInputStream(outfitPath.toFile().toPath())) {
+        try (InputStream is = Files.newInputStream(outfitPath)) {
             Outfit outfit = Outfit.parseFrom(is);
             builder.mergeFrom(outfit);
         } catch (Throwable e) {
@@ -55,7 +55,7 @@ public class FileUtils {
     public static List<EquippedEmote> readEquippedEmotes() {
         List<EquippedEmote> equippedEmotes = new ArrayList<>();
 
-        try (InputStream is = Files.newInputStream(emotesPath.toFile().toPath())) {
+        try (InputStream is = Files.newInputStream(emotesPath)) {
             while (is.available() > 0) {
                 EquippedEmote emote = EquippedEmote.parseDelimitedFrom(is);
                 if (emote != null) {
