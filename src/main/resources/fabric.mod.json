@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "prometheus",
+	"id": "prometheus-lunar",
 	"version": "${project.version}",
 	"environment": "client",
 	"name": "Prometheus",
@@ -12,7 +12,7 @@
 	"license": "GPL-3.0",
 	"icon": "assets/prometheus/icon.png",
 	"mixins": [
-		"prometheus.mixins.json"
+		"prometheus.lunar.mixins.json"
 	],
 	"depends": {
 		"minecraft": ">=1.16.5",

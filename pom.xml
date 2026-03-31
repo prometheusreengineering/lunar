@@ -6,7 +6,7 @@
 
     <groupId>studio.dreamys</groupId>
     <artifactId>prometheus</artifactId>
-    <version>1.2.0-lunar</version>
+    <version>1.2.1-lunar</version>
     <description>The prometheus' patch for Lunar Client.</description>
 
     <repositories>

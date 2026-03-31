@@ -3,7 +3,7 @@ loaderVersion = "[25,)"
 license = "GPL-3.0"
 
 [[mods]]
-modId = "prometheus"
+modId = "prometheus-lunar"
 version = "0.0.0" # not to be updated since the forge folks like to enforce strict versioning </3
 displayName = "Prometheus"
 description = "${project.description}"
