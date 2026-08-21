@@ -1,21 +1,38 @@
-# lunar
-The prometheus' patch for Lunar Client.
+# minecraft-lunar
 
-![Compatibility: Infinite](https://img.shields.io/badge/COMPATIBILITY-∞%20FABRIC-0?style=for-the-badge)
-[![Download Count](https://img.shields.io/github/downloads/prometheusreengineering/lunar/total?style=for-the-badge)](https://github.com/prometheusreengineering/lunar/releases/)
+The Prometheus' patch for Lunar Client.
+
+[![Download Count](https://img.shields.io/github/downloads/prometheusreengineering/minecraft-lunar/total?style=for-the-badge)](https://github.com/prometheusreengineering/essential/releases/)
 [![Discord](https://img.shields.io/discord/1197794960985043034?style=for-the-badge&label=Discord&color=rgb(88%2C%20101%2C%20242)%20)](https://discord.gg/BFDWmPfmXg)
 
+## Compatibility
+
+| Loader | Versions     |
+|:-------|--------------|
+| Forge  | Coming Soon* |
+| Fabric | 1.16+        |
+
+Download the mod [here](https://github.com/prometheusreengineering/minecraft-lunar/releases/latest), or use
+our [loader](https://github.com/prometheusreengineering/prometheus-minecraft/releases/latest) for auto-updates.
+
+\* Lunar Client itself does not support 1.8.9-1.12.2 Forge mods yet, despite having the UI for it. It was confirmed with
+their staff that it was coming, but with low priority due to huge player bases being dropped (ex: Hypixel).
+
 ## Features
+
 - Unlocks ALL cosmetics, emotes, sprays and badges.
 - Lightweight and non-invasive.
 - Compatible with all Fabric versions of Lunar Client.
 
 ### Future Plans
+
 - Cosmetics, emotes, sprays and badges dump.
 - Restricted (ex: staff) modules.
 
 ## Disclaimer
+
 This project is intended for educational purposes only. We are not responsible for any damage caused by this project.
 
 ## License
+
 GPLv3 © Prometheus Reengineering
