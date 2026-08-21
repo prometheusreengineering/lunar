@@ -16,7 +16,7 @@ Download the mod [here](https://github.com/prometheusreengineering/minecraft-lun
 our [loader](https://github.com/prometheusreengineering/prometheus-minecraft/releases/latest) for auto-updates.
 
 \* Lunar Client itself does not support 1.8.9-1.12.2 Forge mods yet, despite having the UI for it. It was confirmed with
-their staff that it was coming, but with low priority due to a huge player bases being dropped (ex: Hypixel).
+their staff that it was coming, but with low priority due to huge player bases being dropped (ex: Hypixel).
 
 ## Features
 
